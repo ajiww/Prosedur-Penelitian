@@ -1,0 +1,17 @@
+78098b89c88a74ebe8c20117b8754620
+::res://::1787864018
+export_presets.cfg::TextFile::-1::1787855790::0::1::::<><><>0<>0<><>::
+README.md::TextFile::-1::1787855790::0::1::::<><><>0<>0<><>::
+::res://appimage/::1787855790
+::res://bin/::1787855795
+::res://bin/__pycache__/::1787855795
+::res://build/::1787855790
+::res://output/::1787855790
+::res://python/::1787855794
+requirements.txt::TextFile::-1::1787855790::0::1::::<><><>0<>0<><>::
+::res://python/__pycache__/::1787855794
+::res://scenes/::1787855767
+main.tscn::PackedScene::-1::1787855112::0::1::::<><><>0<>0<><>::res://scripts/main.gd
+::res://scripts/::1787856226
+main.gd::GDScript::1848990080315147115::1787856226::0::1::::<>Control<><>0<>0<><>::
+::res://tools/::1787855790

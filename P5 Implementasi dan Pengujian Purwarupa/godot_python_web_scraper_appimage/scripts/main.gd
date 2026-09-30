@@ -1,0 +1,203 @@
+extends Control
+
+var process: int = -1
+var running := false
+var scraper_path := ""
+
+@onready var url_input: LineEdit
+@onready var selector_input: LineEdit
+@onready var start_button: Button
+@onready var stop_button: Button
+@onready var log_box: RichTextLabel
+@onready var status_label: Label
+
+func _ready() -> void:
+	_build_ui()
+	start_button.pressed.connect(_on_start_pressed)
+	stop_button.pressed.connect(_on_stop_pressed)
+	stop_button.disabled = true
+	status_label.text = "Status: Siap"
+	scraper_path = _find_scraper()
+	if scraper_path.is_empty():
+		_log("PERINGATAN: executable scraper belum ditemukan.")
+		_log("Untuk mode development gunakan tools/setup_dev.sh atau jalankan build_appimage.sh.")
+	else:
+		_log("Scraper ditemukan: " + scraper_path)
+	_log("Aplikasi siap.")
+
+func _build_ui() -> void:
+	var margin := MarginContainer.new()
+	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	margin.add_theme_constant_override("margin_left", 32)
+	margin.add_theme_constant_override("margin_right", 32)
+	margin.add_theme_constant_override("margin_top", 28)
+	margin.add_theme_constant_override("margin_bottom", 28)
+	add_child(margin)
+
+	var vbox := VBoxContainer.new()
+	vbox.name = "VBox"
+	vbox.add_theme_constant_override("separation", 12)
+	margin.add_child(vbox)
+
+	var title := Label.new()
+	title.text = "Godot Python Web Scraper"
+	title.add_theme_font_size_override("font_size", 28)
+	vbox.add_child(title)
+
+	var info := Label.new()
+	info.text = "Masukkan URL dan CSS selector. Hasil disimpan ke direktori data pengguna."
+	vbox.add_child(info)
+
+	var url_row := HBoxContainer.new()
+	url_row.name = "URLRow"
+	vbox.add_child(url_row)
+
+	var url_label := Label.new()
+	url_label.text = "Target URL:"
+	url_label.custom_minimum_size.x = 120
+	url_row.add_child(url_label)
+
+	url_input = LineEdit.new()
+	url_input.name = "URLInput"
+	url_input.placeholder_text = "https://example.com"
+	url_input.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	url_row.add_child(url_input)
+
+	var selector_row := HBoxContainer.new()
+	selector_row.name = "SelectorRow"
+	vbox.add_child(selector_row)
+
+	var selector_label := Label.new()
+	selector_label.text = "CSS Selector:"
+	selector_label.custom_minimum_size.x = 120
+	selector_row.add_child(selector_label)
+
+	selector_input = LineEdit.new()
+	selector_input.name = "SelectorInput"
+	selector_input.placeholder_text = "h1, .product-title, article"
+	selector_input.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	selector_row.add_child(selector_input)
+
+	var button_row := HBoxContainer.new()
+	button_row.name = "ButtonRow"
+	vbox.add_child(button_row)
+
+	start_button = Button.new()
+	start_button.name = "StartButton"
+	start_button.text = "Jalankan Scraping"
+	button_row.add_child(start_button)
+
+	stop_button = Button.new()
+	stop_button.name = "StopButton"
+	stop_button.text = "Stop"
+	button_row.add_child(stop_button)
+
+	var output_button := Button.new()
+	output_button.text = "Buka Folder Output"
+	output_button.pressed.connect(_open_output_folder)
+	button_row.add_child(output_button)
+
+	status_label = Label.new()
+	vbox.add_child(status_label)
+
+	var log_title := Label.new()
+	log_title.text = "Log:"
+	vbox.add_child(log_title)
+
+	log_box = RichTextLabel.new()
+	log_box.name = "LogBox"
+	log_box.bbcode_enabled = false
+	log_box.custom_minimum_size = Vector2(0, 420)
+	log_box.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	vbox.add_child(log_box)
+
+func _on_start_pressed() -> void:
+	if running:
+		return
+
+	var target_url := url_input.text.strip_edges()
+	var selector := selector_input.text.strip_edges()
+
+	if target_url.is_empty():
+		_log("ERROR: URL target belum diisi.")
+		return
+
+	if not (target_url.begins_with("http://") or target_url.begins_with("https://")):
+		_log("ERROR: URL harus diawali http:// atau https://")
+		return
+
+	scraper_path = _find_scraper()
+	if scraper_path.is_empty():
+		_log("ERROR: scraper executable tidak ditemukan.")
+		return
+
+	var output_dir := _get_output_dir()
+	DirAccess.make_dir_recursive_absolute(output_dir)
+	var output_path := output_dir.path_join("result.csv")
+
+	var args := ["--url", target_url, "--output", output_path]
+	if not selector.is_empty():
+		args += ["--selector", selector]
+
+	_log("Menjalankan scraper executable...")
+	_log("URL: " + target_url)
+	if not selector.is_empty():
+		_log("CSS selector: " + selector)
+	_log("Output: " + output_path)
+
+	process = OS.create_process(scraper_path, args)
+	if process == -1:
+		_log("ERROR: Gagal membuat proses scraper.")
+		return
+
+	running = true
+	start_button.disabled = true
+	stop_button.disabled = false
+	status_label.text = "Status: Berjalan"
+	_monitor_process()
+
+func _monitor_process() -> void:
+	while running:
+		if not OS.is_process_running(process):
+			running = false
+			start_button.disabled = false
+			stop_button.disabled = true
+			status_label.text = "Status: Selesai"
+			_log("Proses selesai. Hasil: " + _get_output_dir().path_join("result.csv"))
+			return
+		await get_tree().create_timer(0.25).timeout
+
+func _on_stop_pressed() -> void:
+	if running and process != -1:
+		OS.kill(process)
+		_log("Proses scraper dihentikan.")
+		running = false
+		start_button.disabled = false
+		stop_button.disabled = true
+		status_label.text = "Status: Dihentikan"
+
+func _find_scraper() -> String:
+	# Untuk aplikasi AppImage: scraper berada sejajar dengan binary Godot.
+	var exe_dir := OS.get_executable_path().get_base_dir()
+	var bundled := exe_dir.path_join("bin/scraper")
+	if FileAccess.file_exists(bundled):
+		return bundled
+
+	# Saat development dari editor, executable hasil PyInstaller bisa diletakkan di project/bin.
+	var dev_path := ProjectSettings.globalize_path("res://bin/scraper")
+	if FileAccess.file_exists(dev_path):
+		return dev_path
+
+	return ""
+
+func _get_output_dir() -> String:
+	var dir := OS.get_user_data_dir().path_join("scraper_output")
+	return dir
+
+func _open_output_folder() -> void:
+	var output_dir := _get_output_dir()
+	DirAccess.make_dir_recursive_absolute(output_dir)
+	OS.shell_open(output_dir)
+
+func _log(message: String) -> void:
+	log_box.append_text(message + "\n")

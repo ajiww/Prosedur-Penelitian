@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="" description="">
+	<nodes>
+		<node id="0" name="CSV File Import" qualified_name="Orange.widgets.data.owcsvimport.OWCSVFileImport" project_name="Orange3" version="" title="2019MHN201" position="(100.0, 151.0)" />
+		<node id="1" name="Data Sampler" qualified_name="Orange.widgets.data.owdatasampler.OWDataSampler" project_name="Orange3" version="" title="Data Sampler" position="(829.0, 544.0)" />
+		<node id="2" name="CSV File Import" qualified_name="Orange.widgets.data.owcsvimport.OWCSVFileImport" project_name="Orange3" version="" title="Perpres-39-2019" position="(95.0, 318.0)" />
+		<node id="3" name="CSV File Import" qualified_name="Orange.widgets.data.owcsvimport.OWCSVFileImport" project_name="Orange3" version="" title="UU-8-1999" position="(73.0, 486.0)" />
+		<node id="4" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table" position="(709.0, 744.0)" />
+		<node id="5" name="CSV File Import" qualified_name="Orange.widgets.data.owcsvimport.OWCSVFileImport" project_name="Orange3" version="" title="UU-23-2002" position="(87.0, 625.0)" />
+		<node id="6" name="Concatenate" qualified_name="Orange.widgets.data.owconcatenate.OWConcatenate" project_name="Orange3" version="" title="Concatenate" position="(494.0, 536.0)" />
+		<node id="7" name="CSV File Import" qualified_name="Orange.widgets.data.owcsvimport.OWCSVFileImport" project_name="Orange3" version="" title="UU-27-2022" position="(104.0, 789.0)" />
+		<node id="8" name="Select Rows" qualified_name="Orange.widgets.data.owselectrows.OWSelectRows" project_name="Orange3" version="" title="Select Rows" position="(271.0, 219.0)" />
+		<node id="9" name="Select Rows" qualified_name="Orange.widgets.data.owselectrows.OWSelectRows" project_name="Orange3" version="" title="Select Rows (1)" position="(261.0, 367.0)" />
+		<node id="10" name="Select Rows" qualified_name="Orange.widgets.data.owselectrows.OWSelectRows" project_name="Orange3" version="" title="Select Rows (2)" position="(261.0, 487.0)" />
+		<node id="11" name="Select Rows" qualified_name="Orange.widgets.data.owselectrows.OWSelectRows" project_name="Orange3" version="" title="Select Rows (3)" position="(261.0, 607.0)" />
+		<node id="12" name="Select Rows" qualified_name="Orange.widgets.data.owselectrows.OWSelectRows" project_name="Orange3" version="" title="Select Rows (4)" position="(261.0, 727.0)" />
+		<node id="13" name="Python Script" qualified_name="Orange.widgets.data.owpythonscript.OWPythonScript" project_name="Orange3" version="" title="Python Script" position="(607.0, 642.0)" />
+		<node id="14" name="Save Data" qualified_name="Orange.widgets.data.owsave.OWSave" project_name="Orange3" version="" title="Save Data" position="(831.0, 836.0)" />
+		<node id="15" name="Distributions" qualified_name="Orange.widgets.visualize.owdistributions.OWDistributions" project_name="Orange3" version="" title="Distributions" position="(1129.0, 345.0)" />
+		<node id="16" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWTable" project_name="Orange3" version="" title="Data Table (1)" position="(1035.0, 539.0)" />
+		<node id="17" name="Corpus" qualified_name="orangecontrib.text.widgets.owcorpus.OWCorpus" project_name="Orange3-Text" version="" title="Corpus" position="(940.0, 663.0)" />
+	</nodes>
+	<links>
+		<link id="0" source_node_id="0" sink_node_id="8" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="1" source_node_id="2" sink_node_id="9" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="2" source_node_id="9" sink_node_id="6" source_channel="Matching Data" sink_channel="Additional Data" enabled="true" source_channel_id="matching_data" sink_channel_id="additional_data" />
+		<link id="3" source_node_id="3" sink_node_id="10" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="4" source_node_id="10" sink_node_id="6" source_channel="Matching Data" sink_channel="Additional Data" enabled="true" source_channel_id="matching_data" sink_channel_id="additional_data" />
+		<link id="5" source_node_id="5" sink_node_id="11" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="6" source_node_id="11" sink_node_id="6" source_channel="Matching Data" sink_channel="Additional Data" enabled="true" source_channel_id="matching_data" sink_channel_id="additional_data" />
+		<link id="7" source_node_id="7" sink_node_id="12" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="8" source_node_id="12" sink_node_id="6" source_channel="Matching Data" sink_channel="Additional Data" enabled="true" source_channel_id="matching_data" sink_channel_id="additional_data" />
+		<link id="9" source_node_id="8" sink_node_id="6" source_channel="Matching Data" sink_channel="Additional Data" enabled="true" source_channel_id="matching_data" sink_channel_id="additional_data" />
+		<link id="10" source_node_id="6" sink_node_id="13" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="11" source_node_id="13" sink_node_id="4" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="12" source_node_id="4" sink_node_id="14" source_channel="Selected Data" sink_channel="Data" enabled="true" source_channel_id="selected_data" sink_channel_id="data" />
+		<link id="13" source_node_id="1" sink_node_id="17" source_channel="Data Sample" sink_channel="Data" enabled="true" source_channel_id="data_sample" sink_channel_id="data" />
+		<link id="14" source_node_id="4" sink_node_id="1" source_channel="Selected Data" sink_channel="Data" enabled="true" source_channel_id="selected_data" sink_channel_id="data" />
+		<link id="15" source_node_id="17" sink_node_id="16" source_channel="Corpus" sink_channel="Data" enabled="true" source_channel_id="corpus" sink_channel_id="data" />
+	</links>
+	<annotations />
+	<thumbnail />
+	<node_properties>
+		<properties node_id="0" format="literal">{'_session_items': [], '_session_items_v2': [({'type': 'AbsPath', 'path': '/home/aww/Work/Proses Penelitian Tesis/2 Pengembangan Kebutuhan Perangkat Lunak/A Elisitasi/makrosampling-unitizing-mikrosampling_2019MHN201.csv'}, {'encoding': 'utf-8', 'delimiter': ',', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 1, 'value': 'Skip'}, {'start': 1, 'stop': 7, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''}), ({'type': 'AbsPath', 'path': '/home/aww/Work/Proses Penelitian Tesis/2 Pengembangan Kebutuhan Perangkat Lunak/A Elisitasi/makrosampling-unitizing-mikrosampling.csv'}, {'encoding': 'utf-8', 'delimiter': ',', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 7, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''})], 'compatibility_mode': False, 'controlAreaVisible': True, 'dialog_state': {'directory': '/home/aww/Work/Proses Penelitian Tesis/2 Pengembangan Kebutuhan Perangkat Lunak/A Elisitasi', 'filter': 'Text - comma separated (*.csv, *)'}, 'savedWidgetGeometry': None, '__version__': 3}</properties>
+		<properties node_id="1" format="literal">{'compatibility_mode': False, 'controlAreaVisible': True, 'number_of_folds': 10, 'replacement': False, 'sampleSizeNumber': 1, 'sampleSizePercentage': 10, 'sampleSizeSqlPercentage': 0.1, 'sampleSizeSqlTime': 1, 'sampling_type': 0, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x03:\x00\x00\x01\x0f\x00\x00\x041\x00\x00\x02\xd8\x00\x00\x03:\x00\x00\x01\x0f\x00\x00\x041\x00\x00\x02\xd8\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x03:\x00\x00\x01\x0f\x00\x00\x041\x00\x00\x02\xd8', 'selectedFold': 1, 'sql_dl': False, 'stratify': False, 'use_seed': True, '__version__': 2}</properties>
+		<properties node_id="2" format="literal">{'_session_items': [], '_session_items_v2': [({'type': 'AbsPath', 'path': '/home/aww/Work/Proses Penelitian Tesis/2 Pengembangan Kebutuhan Perangkat Lunak/A Elisitasi/makrosampling-unitizing-mikrosampling_Perpres-39-2019.csv'}, {'encoding': 'utf-8', 'delimiter': ',', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 1, 'value': 'Skip'}, {'start': 1, 'stop': 7, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''})], 'compatibility_mode': False, 'controlAreaVisible': True, 'dialog_state': {'directory': '/home/aww/Work/Proses Penelitian Tesis/2 Pengembangan Kebutuhan Perangkat Lunak/A Elisitasi', 'filter': 'Text - comma separated (*.csv, *)'}, 'savedWidgetGeometry': None, '__version__': 3}</properties>
+		<properties node_id="3" format="literal">{'_session_items': [], '_session_items_v2': [({'type': 'AbsPath', 'path': '/home/aww/Work/Proses Penelitian Tesis/2 Pengembangan Kebutuhan Perangkat Lunak/A Elisitasi/makrosampling-unitizing-mikrosampling_UU-8-1999.csv'}, {'encoding': 'utf-8', 'delimiter': ',', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 1, 'value': 'Skip'}, {'start': 1, 'stop': 7, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''})], 'compatibility_mode': False, 'controlAreaVisible': True, 'dialog_state': {'directory': '/home/aww/Work/Proses Penelitian Tesis/2 Pengembangan Kebutuhan Perangkat Lunak/A Elisitasi', 'filter': 'Text - comma separated (*.csv, *)'}, 'savedWidgetGeometry': None, '__version__': 3}</properties>
+		<properties node_id="4" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02&amp;\x00\x00\x00\xfa\x00\x00\x05\xdc\x00\x00\x05\x05\x00\x00\x02&amp;\x00\x00\x00\xfa\x00\x00\x05\xdc\x00\x00\x05\x05\x00\x00\x00\x00\x02\x00\x00\x00\x07\x80\x00\x00\x02&amp;\x00\x00\x00\xfa\x00\x00\x05\xdc\x00\x00\x05\x05', 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [], 'columns': []}, 'stored_sort': [], '__version__': 1}</properties>
+		<properties node_id="5" format="literal">{'_session_items': [], '_session_items_v2': [({'type': 'AbsPath', 'path': '/home/aww/Work/Proses Penelitian Tesis/2 Pengembangan Kebutuhan Perangkat Lunak/A Elisitasi/makrosampling-unitizing-mikrosampling_UU-23-2002.csv'}, {'encoding': 'utf-8', 'delimiter': ',', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 1, 'value': 'Skip'}, {'start': 1, 'stop': 7, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''})], 'compatibility_mode': False, 'controlAreaVisible': True, 'dialog_state': {'directory': '/home/aww/Work/Proses Penelitian Tesis/2 Pengembangan Kebutuhan Perangkat Lunak/A Elisitasi', 'filter': 'Text - comma separated (*.csv, *)'}, 'savedWidgetGeometry': None, '__version__': 3}</properties>
+		<properties node_id="6" format="literal">{'append_source_column': False, 'auto_commit': True, 'controlAreaVisible': True, 'ignore_compute_value': False, 'ignore_names': False, 'merge_type': 0, 'savedWidgetGeometry': None, 'source_attr_name': 'Source ID', 'source_column_role': 0, '__version__': 1}</properties>
+		<properties node_id="7" format="literal">{'_session_items': [], '_session_items_v2': [({'type': 'AbsPath', 'path': '/home/aww/Work/Proses Penelitian Tesis/2 Pengembangan Kebutuhan Perangkat Lunak/A Elisitasi/makrosampling-unitizing-mikrosampling_UU-27-2022.csv'}, {'encoding': 'utf-8', 'delimiter': ',', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 1, 'value': 'Skip'}, {'start': 1, 'stop': 7, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''})], 'compatibility_mode': False, 'controlAreaVisible': True, 'dialog_state': {'directory': '/home/aww/Work/Proses Penelitian Tesis/2 Pengembangan Kebutuhan Perangkat Lunak/A Elisitasi', 'filter': 'Text - comma separated (*.csv, *)'}, 'savedWidgetGeometry': None, '__version__': 3}</properties>
+		<properties node_id="8" format="pickle">gASVpQIAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBBwdXJn
+ZV9hdHRyaWJ1dGVzlImMDXB1cmdlX2NsYXNzZXOUiYwTc2F2ZWRXaWRnZXRHZW9tZXRyeZRDQgHZ
+0MsAAwAAAAACigAAASwAAAZAAAAFNwAAAooAAAEsAAAFAgAABTcAAAAAAgAAAAeAAAACigAAASwA
+AAZAAAAFN5SMEHVwZGF0ZV9vbl9jaGFuZ2WUiIwLX192ZXJzaW9uX1+USwKMEGNvbnRleHRfc2V0
+dGluZ3OUXZQojBVvcmFuZ2V3aWRnZXQuc2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1
+ZXOUfZQojApjb25kaXRpb25zlF2UKCiMFFRhaGFwX01ha3JvX1NhbXBsaW5nlEsBSwBdlIwHSW5r
+bHVzaZRhdJQojBRUYWhhcF9NaWtyb19TYW1wbGluZ5RLAUsAXZSMB0lua2x1c2mUYXSUZWgISwJ1
+jAphdHRyaWJ1dGVzlH2UKGgUSwGMDFVuaXRfS29udGVrc5RLAYwOUmVjb3JkaW5nX1VuaXSUSwFo
+GEsBdYwFbWV0YXOUfZQojAxUZWtzX0Rva3VtZW6USwOMC0p1c3RpZmlrYXNplEsDdXViaA0pgZR9
+lChoEH2UKGgSXZQojBRUYWhhcF9NYWtyb19TYW1wbGluZ5RLAUsAXZSMB0lua2x1c2mUYXSUYWgI
+SwJ1aBx9lChoKEsBjAxVbml0X0tvbnRla3OUSwGMFFRhaGFwX01pa3JvX1NhbXBsaW5nlEsBdWgg
+fZQojA5SZWNvcmRpbmdfVW5pdJRLA4wMVGVrc19Eb2t1bWVulEsDjAtKdXN0aWZpa2FzaZRLA3V1
+YmV1Lg==
+</properties>
+		<properties node_id="9" format="pickle">gASV2gIAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBBwdXJn
+ZV9hdHRyaWJ1dGVzlImMDXB1cmdlX2NsYXNzZXOUiYwTc2F2ZWRXaWRnZXRHZW9tZXRyeZRDQgHZ
+0MsAAwAAAAACigAAASwAAAZAAAAFNwAAAooAAAEsAAAFAgAABTcAAAAAAgAAAAeAAAACigAAASwA
+AAZAAAAFN5SMEHVwZGF0ZV9vbl9jaGFuZ2WUiIwLX192ZXJzaW9uX1+USwKMEGNvbnRleHRfc2V0
+dGluZ3OUXZQojBVvcmFuZ2V3aWRnZXQuc2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1
+ZXOUfZQojApjb25kaXRpb25zlF2UKCiMFFRhaGFwX01ha3JvX1NhbXBsaW5nlEsBSwBdlIwHSW5r
+bHVzaZRhdJQojBRUYWhhcF9NaWtyb19TYW1wbGluZ5RLAUsAXZSMB0lua2x1c2mUYXSUZWgISwJ1
+jAphdHRyaWJ1dGVzlH2UKIwUVGFoYXBfTWFrcm9fU2FtcGxpbmeUSwGMDFVuaXRfS29udGVrc5RL
+AYwUVGFoYXBfTWlrcm9fU2FtcGxpbmeUSwF1jAVtZXRhc5R9lCiMDlJlY29yZGluZ19Vbml0lEsD
+jAxUZWtzX0Rva3VtZW6USwOMC0p1c3RpZmlrYXNplEsDdXViaA0pgZR9lChoEH2UKIwKY29uZGl0
+aW9uc5RdlCiMFFRhaGFwX01ha3JvX1NhbXBsaW5nlEsBSwBdlIwHSW5rbHVzaZRhdJRhaAhLAnVo
+HH2UKGgrSwGMDFVuaXRfS29udGVrc5RLAYwOUmVjb3JkaW5nX1VuaXSUSwGMFFRhaGFwX01pa3Jv
+X1NhbXBsaW5nlEsBdWghfZQojAxUZWtzX0Rva3VtZW6USwOMC0p1c3RpZmlrYXNplEsDdXViZXUu
+</properties>
+		<properties node_id="10" format="pickle">gASV2gIAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBBwdXJn
+ZV9hdHRyaWJ1dGVzlImMDXB1cmdlX2NsYXNzZXOUiYwTc2F2ZWRXaWRnZXRHZW9tZXRyeZRDQgHZ
+0MsAAwAAAAACigAAASwAAAZAAAAFNwAAAooAAAEsAAAFAgAABTcAAAAAAgAAAAeAAAACigAAASwA
+AAZAAAAFN5SMEHVwZGF0ZV9vbl9jaGFuZ2WUiIwLX192ZXJzaW9uX1+USwKMEGNvbnRleHRfc2V0
+dGluZ3OUXZQojBVvcmFuZ2V3aWRnZXQuc2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1
+ZXOUfZQojApjb25kaXRpb25zlF2UKCiMFFRhaGFwX01ha3JvX1NhbXBsaW5nlEsBSwBdlIwHSW5r
+bHVzaZRhdJQojBRUYWhhcF9NaWtyb19TYW1wbGluZ5RLAUsAXZSMB0lua2x1c2mUYXSUZWgISwJ1
+jAphdHRyaWJ1dGVzlH2UKIwUVGFoYXBfTWFrcm9fU2FtcGxpbmeUSwGMDFVuaXRfS29udGVrc5RL
+AYwUVGFoYXBfTWlrcm9fU2FtcGxpbmeUSwF1jAVtZXRhc5R9lCiMDlJlY29yZGluZ19Vbml0lEsD
+jAxUZWtzX0Rva3VtZW6USwOMC0p1c3RpZmlrYXNplEsDdXViaA0pgZR9lChoEH2UKIwKY29uZGl0
+aW9uc5RdlCiMFFRhaGFwX01ha3JvX1NhbXBsaW5nlEsBSwBdlIwHSW5rbHVzaZRhdJRhaAhLAnVo
+HH2UKGgrSwGMDFVuaXRfS29udGVrc5RLAYwOUmVjb3JkaW5nX1VuaXSUSwGMFFRhaGFwX01pa3Jv
+X1NhbXBsaW5nlEsBdWghfZQojAxUZWtzX0Rva3VtZW6USwOMC0p1c3RpZmlrYXNplEsDdXViZXUu
+</properties>
+		<properties node_id="11" format="pickle">gASVggMAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBBwdXJn
+ZV9hdHRyaWJ1dGVzlImMDXB1cmdlX2NsYXNzZXOUiYwTc2F2ZWRXaWRnZXRHZW9tZXRyeZRDQgHZ
+0MsAAwAAAAACigAAASwAAAZAAAAFNwAAAooAAAEsAAAE4QAAArsAAAAAAgAAAAeAAAACigAAASwA
+AAZAAAAFN5SMEHVwZGF0ZV9vbl9jaGFuZ2WUiIwLX192ZXJzaW9uX1+USwKMEGNvbnRleHRfc2V0
+dGluZ3OUXZQojBVvcmFuZ2V3aWRnZXQuc2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1
+ZXOUfZQojApjb25kaXRpb25zlF2UKCiMFFRhaGFwX01ha3JvX1NhbXBsaW5nlEsBSwBdlIwHSW5r
+bHVzaZRhdJQojBRUYWhhcF9NaWtyb19TYW1wbGluZ5RLAUsAXZSMB0lua2x1c2mUYXSUZWgISwJ1
+jAphdHRyaWJ1dGVzlH2UKGgUSwFoGEsBdYwFbWV0YXOUfZQojAxVbml0X0tvbnRla3OUSwOMDlJl
+Y29yZGluZ19Vbml0lEsDjAxUZWtzX0Rva3VtZW6USwOMC0p1c3RpZmlrYXNplEsDdXViaA0pgZR9
+lChoEH2UKIwKY29uZGl0aW9uc5RdlCiMFFRhaGFwX01ha3JvX1NhbXBsaW5nlEsBSwBdlIwHSW5r
+bHVzaZRhdJRhaAhLAnVoHH2UKIwUVGFoYXBfTWFrcm9fU2FtcGxpbmeUSwGMDFVuaXRfS29udGVr
+c5RLAYwUVGFoYXBfTWlrcm9fU2FtcGxpbmeUSwF1aB59lCiMDlJlY29yZGluZ19Vbml0lEsDjAxU
+ZWtzX0Rva3VtZW6USwOMC0p1c3RpZmlrYXNplEsDdXViaA0pgZR9lChoEH2UKIwKY29uZGl0aW9u
+c5RdlCiMFFRhaGFwX01ha3JvX1NhbXBsaW5nlEsBSwBdlIwHSW5rbHVzaZRhdJRhaAhLAnVoHH2U
+KGg6SwGMDFVuaXRfS29udGVrc5RLAYwOUmVjb3JkaW5nX1VuaXSUSwGMFFRhaGFwX01pa3JvX1Nh
+bXBsaW5nlEsBdWgefZQojAxUZWtzX0Rva3VtZW6USwOMC0p1c3RpZmlrYXNplEsDdXViZXUu
+</properties>
+		<properties node_id="12" format="pickle">gASVrAMAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBBwdXJn
+ZV9hdHRyaWJ1dGVzlImMDXB1cmdlX2NsYXNzZXOUiYwTc2F2ZWRXaWRnZXRHZW9tZXRyeZRDQgHZ
+0MsAAwAAAAACigAAASwAAAZAAAAFNwAAAooAAAEsAAAFAgAABTcAAAAAAgAAAAeAAAACigAAASwA
+AAZAAAAFN5SMEHVwZGF0ZV9vbl9jaGFuZ2WUiIwLX192ZXJzaW9uX1+USwKMEGNvbnRleHRfc2V0
+dGluZ3OUXZQojBVvcmFuZ2V3aWRnZXQuc2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1
+ZXOUfZQojApjb25kaXRpb25zlF2UKCiMFFRhaGFwX01ha3JvX1NhbXBsaW5nlEsBSwBdlIwHSW5r
+bHVzaZRhdJQojBRUYWhhcF9NaWtyb19TYW1wbGluZ5RLAUsAXZSMB0lua2x1c2mUYXSUZWgISwJ1
+jAphdHRyaWJ1dGVzlH2UKIwUVGFoYXBfTWFrcm9fU2FtcGxpbmeUSwGMFFRhaGFwX01pa3JvX1Nh
+bXBsaW5nlEsBdYwFbWV0YXOUfZQojAxVbml0X0tvbnRla3OUSwOMDlJlY29yZGluZ19Vbml0lEsD
+jAxUZWtzX0Rva3VtZW6USwOMC0p1c3RpZmlrYXNplEsDdXViaA0pgZR9lChoEH2UKIwKY29uZGl0
+aW9uc5RdlCiMFFRhaGFwX01ha3JvX1NhbXBsaW5nlEsBSwBdlIwHSW5rbHVzaZRhdJRhaAhLAnVo
+HH2UKIwUVGFoYXBfTWFrcm9fU2FtcGxpbmeUSwGMDFVuaXRfS29udGVrc5RLAYwUVGFoYXBfTWlr
+cm9fU2FtcGxpbmeUSwF1aCB9lCiMDlJlY29yZGluZ19Vbml0lEsDjAxUZWtzX0Rva3VtZW6USwOM
+C0p1c3RpZmlrYXNplEsDdXViaA0pgZR9lChoEH2UKIwKY29uZGl0aW9uc5RdlCiMFFRhaGFwX01h
+a3JvX1NhbXBsaW5nlEsBSwBdlIwHSW5rbHVzaZRhdJRhaAhLAnVoHH2UKGg8SwGMDFVuaXRfS29u
+dGVrc5RLAYwOUmVjb3JkaW5nX1VuaXSUSwGMFFRhaGFwX01pa3JvX1NhbXBsaW5nlEsBdWggfZQo
+jAxUZWtzX0Rva3VtZW6USwOMC0p1c3RpZmlrYXNplEsDdXViZXUu
+</properties>
+		<properties node_id="13" format="literal">{'controlAreaVisible': True, 'currentScriptIndex': 0, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02\x17\x00\x00\x00\xc8\x00\x00\x05\xcd\x00\x00\x04\xd3\x00\x00\x02\x17\x00\x00\x00\xc8\x00\x00\x05T\x00\x00\x03\x1f\x00\x00\x00\x00\x02\x00\x00\x00\x07\x80\x00\x00\x02\x17\x00\x00\x00\xc8\x00\x00\x05\xcd\x00\x00\x04\xd3', 'scriptLibrary': [{'name': 'Table from numpy', 'script': 'import numpy as np\nfrom Orange.data import Table, Domain, StringVariable\n\n# Define the column name (hyphen is safe here)\nnew_var = StringVariable("ID-Kode")\n\n# Generate incremental values: U_1, U_2, U_3, etc.\nn_rows = len(in_data)\nnew_values = [f"U_{i}" for i in range(1, n_rows + 1)]\n\n# Build the new domain including the meta attribute\nnew_domain = Domain(in_data.domain.attributes, \n                    in_data.domain.class_vars, \n                    in_data.domain.metas + (new_var,))\n\n# Merge old data with the new ID-Kode column\nnew_metas = np.column_stack((in_data.metas, np.array(new_values, dtype=object))) if in_data.metas.size &gt; 0 else np.array(new_values, dtype=object).reshape(-1, 1)\n\nout_data = Table.from_numpy(new_domain, in_data.X, in_data.Y, new_metas)', 'filename': None}], 'scriptText': 'import numpy as np\nfrom Orange.data import Table, Domain, StringVariable\n\n# Define the column name (hyphen is safe here)\nnew_var = StringVariable("ID-Kode")\n\n# Generate incremental values: U_1, U_2, U_3, etc.\nn_rows = len(in_data)\nnew_values = [f"U_{i}" for i in range(1, n_rows + 1)]\n\n# Build the new domain including the meta attribute\nnew_domain = Domain(in_data.domain.attributes, \n                    in_data.domain.class_vars, \n                    in_data.domain.metas + (new_var,))\n\n# Merge old data with the new ID-Kode column\nnew_metas = np.column_stack((in_data.metas, np.array(new_values, dtype=object))) if in_data.metas.size &gt; 0 else np.array(new_values, dtype=object).reshape(-1, 1)\n\nout_data = Table.from_numpy(new_domain, in_data.X, in_data.Y, new_metas)', 'splitterState': b'\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\xac\x00\x00\x00h\x01\xff\xff\xff\xff\x01\x00\x00\x00\x02\x00', 'vimModeEnabled': False, '__version__': 2}</properties>
+		<properties node_id="14" format="literal">{'add_type_annotations': True, 'auto_save': True, 'controlAreaVisible': True, 'filter': 'Microsoft Excel spreadsheet (*.xlsx)', 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x03;\x00\x00\x01\xaa\x00\x00\x04\xb4\x00\x00\x02=\x00\x00\x03;\x00\x00\x01\xaa\x00\x00\x04\xb4\x00\x00\x02=\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x03;\x00\x00\x01\xaa\x00\x00\x04\xb4\x00\x00\x02=', 'stored_name': 'unitizing-sampling-concatenated.xlsx', 'stored_path': '.', '__version__': 3}</properties>
+		<properties node_id="15" format="pickle">gASVeQIAAAAAAAB9lCiMCmF1dG9fYXBwbHmUiIwSY29udHJvbEFyZWFWaXNpYmxllIiMEGN1bXVs
+YXRpdmVfZGlzdHKUiYwTZml0dGVkX2Rpc3RyaWJ1dGlvbpRLAIwJaGlkZV9iYXJzlImMDWtkZV9z
+bW9vdGhpbmeUSwqME3NhdmVkV2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAAAdEAAADBAAAFhwAA
+BMwAAAHRAAAAwQAABZsAAAMmAAAAAAIAAAAHgAAAAdEAAADBAAAFhwAABMyUjApzaG93X3Byb2Jz
+lImMDHNvcnRfYnlfZnJlcZSJjA9zdGFja2VkX2NvbHVtbnOUiYwLX192ZXJzaW9uX1+USwKMEGNv
+bnRleHRfc2V0dGluZ3OUXZSMFW9yYW5nZXdpZGdldC5zZXR0aW5nc5SMB0NvbnRleHSUk5QpgZR9
+lCiMBnZhbHVlc5R9lCiMBGN2YXKUTkr+////hpSMDm51bWJlcl9vZl9iaW5zlEsASv7///+GlIwN
+c2VsZWN0ZWRfYmFyc5SPlEr+////hpSMA3ZhcpSMElJlY29yZGluZ19Vbml0ICgxKZRLZYaUaAxL
+AnWMCmF0dHJpYnV0ZXOUfZQojBRUYWhhcF9NYWtyb19TYW1wbGluZ5RLAYwQVW5pdF9Lb250ZWtz
+ICgxKZRLAYwUVGFoYXBfTWlrcm9fU2FtcGxpbmeUSwFoHksBdYwFbWV0YXOUfZQojBJSZWNvcmRp
+bmdfVW5pdCAoMimUSwOMDFRla3NfRG9rdW1lbpRLA4wLSnVzdGlmaWthc2mUSwOMEFVuaXRfS29u
+dGVrcyAoMimUSwN1dWJhdS4=
+</properties>
+		<properties node_id="16" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02&amp;\x00\x00\x00\xfa\x00\x00\x05\xdc\x00\x00\x05\x05\x00\x00\x02&amp;\x00\x00\x00\xfa\x00\x00\x05\xdc\x00\x00\x05\x05\x00\x00\x00\x00\x02\x00\x00\x00\x07\x80\x00\x00\x02&amp;\x00\x00\x00\xfa\x00\x00\x05\xdc\x00\x00\x05\x05', 'select_rows': True, 'show_attribute_labels': True, 'show_distributions': False, 'stored_selection': {'rows': [6], 'columns': [0, 1, 2, 3, 4, 5, 6, 7]}, 'stored_sort': [], '__version__': 1}</properties>
+		<properties node_id="17" format="pickle">gASVGQQAAAAAAAB9lCiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjAxyZWNlbnRfZmlsZXOUXZQojBFi
+b29rLWV4Y2VycHRzLnRhYpSMGGdyaW1tLXRhbGVzLXNlbGVjdGVkLnRhYpSMGGVsZWN0aW9uLXR3
+ZWV0cy0yMDE2LnRhYpSMF2ZyaWVuZHMtdHJhbnNjcmlwdHMudGFilIwMYW5kZXJzZW4udGFilGWM
+E3NhdmVkV2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAAAtYAAAFJAAAGjAAABVQAAALWAAABSQAA
+BJUAAAKeAAAAAAIAAAAHgAAAAtYAAAFJAAAGjAAABVSUjAtfX3ZlcnNpb25fX5RLAowQY29udGV4
+dF9zZXR0aW5nc5RdlCiMFW9yYW5nZXdpZGdldC5zZXR0aW5nc5SMB0NvbnRleHSUk5QpgZR9lCiM
+BnZhbHVlc5R9lCiMCGxhbmd1YWdllIwCdGyUSv7///+GlIwOdGl0bGVfdmFyaWFibGWUjBJSZWNv
+cmRpbmdfVW5pdCAoMimUS2eGlIwKdXNlZF9hdHRyc5RdlGgZS2eGlGFK/f///4aUaAtLAnWMCmF0
+dHJpYnV0ZXOUfZQojBRUYWhhcF9NYWtyb19TYW1wbGluZ5RLAYwQVW5pdF9Lb250ZWtzICgxKZRL
+AYwUVGFoYXBfTWlrcm9fU2FtcGxpbmeUSwGMElJlY29yZGluZ19Vbml0ICgxKZRLAXWMBW1ldGFz
+lH2UKGgZSwOMDFRla3NfRG9rdW1lbpRLA4wLSnVzdGlmaWthc2mUSwOMEFVuaXRfS29udGVrcyAo
+MimUSwOMB0lELUtvZGWUSwN1jA5kb2N1bWVudHNfaGFzaJSKEEFiUWTNOXUlLXF4OASQWjVoFU51
+YmgQKYGUfZQoaBN9lChoFWgWSv7///+GlGgYaBlLZ4aUaBtdlGgZS2eGlGFK/f///4aUaAtLAnVo
+H32UKGghSwFoIksBaCNLAWgkSwF1aCV9lChoGUsDaCdLA2goSwNoKUsDdWgrihBBYlFkzTl1JS1x
+eDgEkFo1aBVOdWJoECmBlH2UKGgTfZQoaBWMAmVulEr+////hpRoGE5K/v///4aUaBtdlIwEVGV4
+dJRLZ4aUYUr9////hpRoC0sCdWgffZSMCENhdGVnb3J5lEsBc2glfZSMBFRleHSUSwNzaCuKEaw1
+BwQZtAhLt7rkdtqukZcAaBVoOXViaBApgZR9lChoE32UKGgVaBZK/v///4aUaBhoGUtnhpRoG12U
+aBlLZ4aUYUr9////hpRoC0sCdWgffZQoaCFLAWgiSwFoI0sBaCRLAXVoJX2UKGgZSwNoJ0sDaChL
+A2gpSwN1aCuKEFS5jjmNwcbudVIQic5HdiJoFU51YmV1Lg==
+</properties>
+	</node_properties>
+	<session_state>
+		<window_groups />
+	</session_state>
+</scheme>

@@ -1,0 +1,6 @@
+Aktivitas "Sampling" baik makro maupun mikro dalam Krippendorff Content Analysis menyaring data yang relevan dengan tujuan penelitian.
+
+Tujuan penelitian ini adalah untuk:
+1. Menghasilkan dokumen spesifikasi kebutuhan perangkat lunak SRS web scraping yang mengintegrasikan aspek legalitas dan etika privasi data menggunakan metode KCA.
+2. Membuat purwarupa perangkat lunak web scraping berdasarkan SRS terintegrasi aspek legalitas dan etika privasi data.
+
